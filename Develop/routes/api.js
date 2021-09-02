@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Transaction = require("../models/workout.js");
 
-router.post("/api/transaction", ({body}, res) => {
+router.post("/api/workouts", ({body}, res) => {
   Transaction.create(body)
     .then(workoutRes => {
       res.json(workoutRes);
