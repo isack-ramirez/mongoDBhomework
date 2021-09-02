@@ -1,10 +1,10 @@
 
 const path = require('path')
 const router = require("express").Router();
-const workout = require("../models/workout.js");
+const workout = require("../models/workout");
 
 router.post("/api/workouts", ({body}, res) => {
-  workout.create(body)
+  workout.Workout.create(body)
     .then(workoutRes => {
       res.json(workoutRes);
     })
@@ -12,6 +12,16 @@ router.post("/api/workouts", ({body}, res) => {
       res.status(404).json(err);
       
     });
+});
+
+router.get("/api/workouts", (req, res) => {
+  workout.Workout.find({})
+  .then(workout => {
+      res.json(workout);
+  })
+  .catch(err => {
+      res.json(err);
+  });
 });
 
 
