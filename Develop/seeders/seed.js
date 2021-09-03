@@ -20,6 +20,7 @@ const workoutSeed = [
         sets: 4,
       },
     ],
+    
   },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 8)),
