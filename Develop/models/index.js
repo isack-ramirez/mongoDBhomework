@@ -1,3 +1,3 @@
 workout = require("./workout");
 
-module.exports={workout}
+module.exports=workout
