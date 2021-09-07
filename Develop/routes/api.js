@@ -39,7 +39,7 @@ router.get("/api/workouts", (req, res) => {
 
 router.put("/api/workouts/:id", ({body, params}, res) => {
   console.log(params.id)
-  workout.findByIdAndUpdate(params.id)
+  workout.findByIdAndUpdate({_id : params.id}, {exercises : body})
     .then(workoutRes => {
       res.json(workoutRes);
     })
